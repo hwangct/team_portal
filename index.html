@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>App Demo in Angular</title>
+		<!--Import materialize.css-->
+		<link href="assets/css/material-icons.css" rel="stylesheet">
+		<link href="assets/css/materialize.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/bootstrap.css">
+		<link rel="stylesheet" href="assets/css/custom.css">
+		<link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
+		<link rel="stylesheet" href="assets/css/angular-datatables.css">
+	</head>
+	<body ng-app="sampleApp">
+		<div class="contents">
+			<nav>
+				<div class="nav-wrapper white">
+					<img src="http://www.s2analyticalsolutions.com/wp-content/themes/s2analytical/library/images/s2_logo_anim.gif?rand=913" width="124" height="60">
+					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons cyan-text accent-3">menu</i></a>
+					<ul class="right hide-on-med-and-down">
+						<li>
+							<a class="grey-text text-darken-2" ui-sref="candidates">Candidates</a>
+						</li>
+						<li>
+							<a class="grey-text text-darken-2" ui-sref="enoms">Enoms</a>
+						</li>
+					</ul>
+					<ul class="side-nav" id="mobile-demo">
+						<li>
+							<a class="grey-text text-darken-2" ui-sref="candidates">Candidates</a>
+						</li>
+						<li>
+							<a class="grey-text text-darken-2" ui-sref="enoms">Enoms</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div class="container ui-view"></div>
+			<div class="push"></div>
+		</div>
+
+		<!-- Footer -->
+		<footer class="page-footer">
+			<!--div class="container">
+				<div class="row">
+					<div class="col l4 offset-l2 s12">
+						<h5 class="white-text">Links</h5>
+						<ul>
+							<li>
+								<a class="grey-text text-lighten-3" href="#!">Link 1</a>
+							</li>
+							<li>
+								<a class="grey-text text-lighten-3" href="#!">Link 2</a>
+							</li>
+							<li>
+								<a class="grey-text text-lighten-3" href="#!">Link 3</a>
+							</li>
+							<li>
+								<a class="grey-text text-lighten-3" href="#!">Link 4</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>-->
+			<div class="footer-copyright">
+				<div class="container">
+					Copyright 2016 S2 Analytical Solutions, LLC. All Rights Reserved
+					<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+				</div>
+			</div>
+		</footer>
+		<script src="assets/libs/jquery.min.js"></script>
+		<script src="assets/libs/jquery.dataTables.min.js"></script>		
+		<script src="assets/libs/angular.min.js"></script>
+		<script src="assets/libs/angular-datatables.min.js"></script>
+		<!-- Compiled and minified JavaScript -->
+		<!-- <script src="assets/libs/angular-route.min.js"></script> -->
+		<script src="assets/libs/bootstrap.min.js"></script>
+		<script src="assets/libs/angular-ui-router.min.js"></script>
+
+		<!-- Angular Material via CDN -->
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-sanitize.js"></script>
+		<!-- Angular routes services -->
+		<script src="app/app.module.js"></script>
+		<script src="app/app.routes.js"></script>
+		<script src="app/components/candidates/candidatesService.js"></script>
+		<script src="app/components/enoms/enomsService.js"></script>
+		<script src="app/components/taskOrders/taskOrdersService.js"></script>
+
+		<script src="assets/libs/materialize.min.js"></script>
+		<script src="assets/libs/magnific_popup.js"></script>
+		<script>
+		$(function() {
+			$(".button-collapse").sideNav();
+		});
+		</script>
+
+	</body>
+</html>

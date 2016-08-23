@@ -1,0 +1,36 @@
+{
+   "Employees":[
+      {
+         "EmpId":1,
+         "EmpName":"ABCD",
+         "EmpBaseLocation":"China",
+         "Technology":"Java",
+         "TeamSize": 8,
+         "ProjectName": "QWERTY"
+      },
+      {
+         "EmpId":2,
+         "EmpName":"EFGH",
+         "EmpBaseLocation":"USA",
+         "Technology":".Net",
+         "TeamSize": 4,
+         "ProjectName": "ASDFG"
+      },
+      {
+         "EmpId":3,
+         "EmpName":"IJKL",
+         "EmpBaseLocation":"UK",
+         "Technology":"Mainframes",
+         "TeamSize": 12,
+         "ProjectName": "UIOP"
+      },
+      {
+         "EmpId":4,
+         "EmpName":"MNOP",
+         "EmpBaseLocation":"India",
+         "Technology":"Oracle",
+         "TeamSize": 5,
+         "ProjectName": "ZXCVB"
+      }
+   ]
+}

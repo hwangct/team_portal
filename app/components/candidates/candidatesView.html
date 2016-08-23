@@ -1,0 +1,19 @@
+<table datatable="ng" class="row-border hover" >
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Candidate</th>
+      <th>Position ID</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="x in candidates">
+      <td>{{x.Company}}</td>  
+      <td>{{x.CandidateName}}</td> 
+      <td>{{x.PosnIDId}}</td>
+      <td>{{x.StatusValue}}</td>
+    </tr>
+  </tbody>
+</table>

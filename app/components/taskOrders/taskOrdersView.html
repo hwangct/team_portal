@@ -1,0 +1,25 @@
+<table datatable="ng" class="row-border hover" >
+  <thead>
+    <tr>
+      <th>Task Order</th>
+      <th>Position Number</th>
+      <th>Position Title</th>
+      <th>Status</th>
+      <th>PD</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="x in taskOrders">
+      <td>{{x.TaskOrder}}</td>
+      <td>{{x.Positionnumber}}</td>
+      <td>{{x.Positiontitle}}</td>
+      <td>
+         <a class="btn btn-default popup-with-zoom-anim" href="assets/img/workflow.png">
+           {{x.StatusValue}}
+         </a>
+      </td>
+      <td ng-bind-html="x.ResumeLinks"></td>
+    </tr>
+  </tbody>
+</table>
