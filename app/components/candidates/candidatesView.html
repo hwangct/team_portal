@@ -1,19 +1,49 @@
-<table datatable="ng" class="row-border hover" >
-  <thead>
-    <tr>
-      <th>Company</th>
-      <th>Candidate</th>
-      <th>Position ID</th>
-      <th>Status</th>
-    </tr>
-  </thead>
+<div class="row">
+  <!-- Positions Table -->
+  <div class="col-md-7 col-sm-12">
+    <table datatable="ng" class="row-border hover">
+      <thead>
+        <tr>
+          <th>Position Title</th>
+          <th>ID</th>
+          <th>Family</th>
+          <th>Level</th>
+          <th>Site</th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <tr ng-repeat="x in candidates">
-      <td>{{x.Company}}</td>  
-      <td>{{x.CandidateName}}</td> 
-      <td>{{x.PosnIDId}}</td>
-      <td>{{x.StatusValue}}</td>
-    </tr>
-  </tbody>
-</table>
+      <tbody>
+        <tr ng-repeat="x in positions">
+          <td>{{x.PosnTitle}}</td>
+          <td>{{x.PosnID}}</td>
+          <td>{{x.LaborFamily}}</td>
+          <td>{{x.LaborLevel}}</td>
+          <td>{{x.Site}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Submissions Table -->
+  <div class="col-md-5 col-sm-12">
+    <table datatable="ng" class="row-border hover">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Candidate</th>
+          <th>ID</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="x in candidates">
+          <td>{{x.Company}}</td>
+          <td>{{x.CandidateName}}</td>
+          <td>{{x.PosnIDId}}</td>
+          <td>{{x.StatusValue}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

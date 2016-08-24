@@ -6,17 +6,20 @@ sampleApp.config(function($stateProvider, $urlRouterProvider) {
 	$stateProvider.
 	  state('candidates', {
 	  	url: '/candidates',
-		  templateUrl: 'app/components/candidates/candidatesView.html',
+		  templateUrl: '/siteassets/team_portal/app/components/candidates/candidatesView.html',
 		  controller: 'candidatesController',
 		  resolve: {
 		  	candidates: function(candidatesLibrary) {
 		  		return candidatesLibrary.getCandidates();
-		  	}
+		  	},
+	  		positions: function(positionsLibrary) {
+	  			return positionsLibrary.getPositions();
+	  		}
 		  }
 	  }).
 	  state('enoms', {
 	  	url: '/enoms',
-		  templateUrl: 'app/components/enoms/enomsView.html',
+		  templateUrl: '/siteassets/team_portal/app/components/enoms/enomsView.html',
 		  controller: 'enomController',
 		  resolve: {
 		  	enoms: function(enomsLibrary) {
@@ -26,7 +29,7 @@ sampleApp.config(function($stateProvider, $urlRouterProvider) {
 	  }).
 	  state('taskorders', {
 	  	url: '/taskOrders',
-		  templateUrl: 'app/components/taskOrders/taskOrdersView.html',
+		  templateUrl: '/siteassets/team_portal/app/components/taskOrders/taskOrdersView.html',
 		  controller: 'taskOrdersController',
 		  resolve: {
 		  	taskOrders: function(taskOrdersLibrary) {
