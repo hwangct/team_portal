@@ -15,7 +15,7 @@
     <div class="contents">
       <nav>
         <div class="nav-wrapper white">
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons cyan-text accent-3">menu</i></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons grey-text text-darken-2">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li>
               <a class="grey-text text-darken-2" ui-sref="candidates">Candidates</a>

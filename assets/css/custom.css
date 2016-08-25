@@ -19,10 +19,24 @@ footer.page-footer {
 }
 
 /**
+ * 	Materialize
+ */
+/* label focus color */
+input[type=search]:focus + label {
+	color: #B93A18 !important;
+}
+/* label underline focus color */
+input[type=search]:focus {
+	border-bottom: 1px solid #B93A18 !important;
+  box-shadow: 0 1px 0 0 #B93A18 !important;
+}    
+/**
  * 	DataTables
  */
 .dataTables_wrapper {
 	padding: 2.0em 0 0 0 !important;
+	padding-left: 5%;
+  padding-right: 5%;
 }
 .dataTables_wrapper select {
 	display: inline-block;
@@ -41,7 +55,12 @@ footer.page-footer {
 	letter-spacing: 0;
 	text-transform: none;
 }
-
+caption {
+	color: #B93A18;
+	font-size: 1.25em;
+	padding-left: 8px;
+	padding-top: 0px;
+}
 /**
  * 	Footer
  */
