@@ -6,11 +6,12 @@ enoms.factory('enomsLibrary', function($http, $q) {
 	
 	return {
     getEnoms: function() {
+    	/*
     	if(enoms.length > 0) {
 				var deferred = $q.defer();
 				deferred.resolve(getEnoms);
 				return deferred.promise;
-			}
+			}*/
       var url = "https://s2as.sharepoint.com/WarRoom/Emerald/Emerald_Teammates/_vti_bin/listdata.svc/Submissions";
     	return $http.get(url).then(function(result) {
 				enoms = result.data.d.results;
@@ -31,11 +32,3 @@ enoms.factory('enomsLibrary', function($http, $q) {
 	};
 });
 
-function convertDate(odata_date) {
-	var date = "";
-	if ((odata_date != '') && (odata_date != undefined)) {
-		date = new Date(parseInt(odata_date.substr(6)));
-	} 
-	
-	return date;
-}

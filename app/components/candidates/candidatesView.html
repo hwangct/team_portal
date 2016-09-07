@@ -1,10 +1,18 @@
+<!--
+  <div class="title">Candidate Submissions</div>
+<div class="sp_action" id="dialogContainer" ng-controller="dialogController as ctrl" layout="row" ng-cloak>
+  <md-content>
+       <div ng-click="showCustom($event)"  flex="100"  flex-gt-md="auto" class="sp_action"><i class="material-icons sp_icon">library_add</i> New Item </div>
+  </md-content>   
+</div>
+-->
 <div class="row">
-  <!-- Positions Table -->
-  <div class="col-md-7 col-sm-12">
-    <table datatable="ng" class="display compact row-border hover">
+  <div class="col-lg-6 col-md-12">
+    <table datatable="ng" dt-optons="showCase.dtOptions" dt-columns="showCase.dtColumns" class="display compact row-border hover">
       <caption>
-        Open Positions
+        <div class="title">Open Positions</div>
       </caption>
+      
       <thead>
         <tr>
           <th>Position Title</th>
@@ -27,10 +35,12 @@
     </table>
   </div>
   
-  <!-- Submissions Table -->
-  <div class="col-md-5 col-sm-12">
+  <div class="col-lg-6 col-md-12">
     <table datatable="ng" class="display compact row-border hover">
-      <caption>Candidate Submissions</caption>
+      <caption>
+        <div class="title">Candidate Submissions</div>
+        <div class="sp_action"><a ng-href="{{newsubmissionurl}}" target="_blank"><i class="material-icons sp_icon">library_add</i> New Item</a> </div>
+      </caption>
       <thead>
         <tr>
           <th>Company</th>
@@ -41,11 +51,11 @@
       </thead>
 
       <tbody>
-        <tr ng-repeat="x in candidates">
+        <tr ng-repeat="x in submissions">
           <td>{{x.Company}}</td>
           <td>{{x.CandidateName}}</td>
           <td>{{x.PosnIDId}}</td>
-          <td>{{x.StatusValue}}</td>
+          <td>{{x.CandidateStatusValue}} on <span class="s2orange-text">{{x.StatusDate}}</span></td>
         </tr>
       </tbody>
     </table>

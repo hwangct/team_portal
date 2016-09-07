@@ -1,25 +1,49 @@
 var candidates = angular.module('candidatesService', []);
 
-candidates.factory('candidatesLibrary', ['$http', function($http) {
+candidates.factory('submissionsLibrary', ['$http', function($http, $q) {
+	var submissions = [];
+	var obj = {};
+	
 	return {
-		getCandidates: function() {
-			//var promise1 = $http.get("../_vti_bin/listdata.svc/Submissions");
-			//var promise2 = $http.get("../_vti_bin/listdata.svc/Positions");
-			
-			//return $q.all([promise1, promise2]);
-			return $http.get("../_vti_bin/listdata.svc/Submissions");
+		getSubmissions: function() {
+
+			var url = "../_vti_bin/listdata.svc/Submissions";
+			return $http.get(url).then(function(result) {
+				submissions = result.data.d.results;
+				// Do something with enoms here?
+				for (var x in submissions) {
+					submissions[x].StatusDate = convertDate(submissions[x].StatusDate);
+				}
+				return submissions;
+			});
 		}
 	};
 }]);
 
-candidates.factory('positionsLibrary', ['$http', function($http) {
+candidates.factory('positionsLibrary', ['$http', function($http, $q) {
+	var positions = [];
+	var open_positions = [];
+	var obj = {};
+	
 	return {
 		getPositions: function() {
-			//var promise1 = $http.get("../_vti_bin/listdata.svc/Submissions");
-			//var promise2 = $http.get("../_vti_bin/listdata.svc/Positions");
+			if(open_positions.length > 0) {
+				// Don't add more to the array until refresh?
+				return open_positions;
+			}
 			
-			//return $q.all([promise1, promise2]);
-			return $http.get("../_vti_bin/listdata.svc/Positions");
+			var url = "../_vti_bin/listdata.svc/Positions";
+			return $http.get(url).then(function(result) {
+				positions = result.data.d.results;
+				// Only return open positions;
+				for (var x in positions) {
+					if(positions[x].StatusValue !== "Filled") {
+						// add open position
+						open_positions.push(positions[x]);
+					}
+				}
+				return open_positions;
+			});
 		}
 	};
 }]);

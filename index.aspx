@@ -4,14 +4,17 @@
 <meta name="WebPartPageExpansion" content="full" />
 <title>App Demo in Angular</title>
     <!--Import materialize.css-->
-    <link href="/SiteAssets/team_portal/assets/css/material-icons.css" rel="stylesheet">
-    <link href="/SiteAssets/team_portal/assets/css/materialize.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/SiteAssets/team_portal/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/SiteAssets/team_portal/assets/css/custom.css">
-    <link rel="stylesheet" href="/SiteAssets/team_portal/assets/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="/SiteAssets/team_portal/assets/css/angular-datatables.css">
+		<link href="/SiteAssets/team_portal_dev/assets/css/material-icons.css" rel="stylesheet">
+    <link href="/SiteAssets/team_portal_dev/assets/css/materialize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/custom.css">
+    <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/angular-datatables.css">
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
   </head>
-  <body ng-app="sampleApp">
+
+  <body ng-app="sampleApp" ng-cloak>
     <div class="contents">
       <nav>
         <div class="nav-wrapper white">
@@ -37,30 +40,11 @@
       <div class="ui-view"></div>
       <div class="push"></div>
     </div>
-
+<!-- Modal Test -->
+      
+		  
     <!-- Footer -->
-    <footer class="page-footer">
-      <!--div class="container">
-        <div class="row">
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li>
-                <a class="grey-text text-lighten-3" href="#!">Link 1</a>
-              </li>
-              <li>
-                <a class="grey-text text-lighten-3" href="#!">Link 2</a>
-              </li>
-              <li>
-                <a class="grey-text text-lighten-3" href="#!">Link 3</a>
-              </li>
-              <li>
-                <a class="grey-text text-lighten-3" href="#!">Link 4</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>-->
+    <footer class="page-footer"> 
       <div class="footer-copyright">
         <div class="container">
           Copyright 2016 S2 Analytical Solutions, LLC. All Rights Reserved
@@ -68,35 +52,40 @@
         </div>
       </div>
     </footer>
-    <script src="/SiteAssets/team_portal/assets/libs/jquery.min.js"></script>
-    <script src="/SiteAssets/team_portal/assets/libs/jquery.dataTables.min.js"></script>    
-    <script src="/SiteAssets/team_portal/assets/libs/angular.min.js"></script>
-    <script src="/SiteAssets/team_portal/assets/libs/angular-datatables.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <!-- <script src="/SiteAssets/team_portal/assets/libs/angular-route.min.js"></script> -->
-    <script src="/SiteAssets/team_portal/assets/libs/bootstrap.min.js"></script>
-    <script src="/SiteAssets/team_portal/assets/libs/angular-ui-router.min.js"></script>
+   	<script src="/SiteAssets/team_portal_dev/assets/js/util.js"></script>
+    <script src="/SiteAssets/team_portal_dev/assets/libs/moment.js"></script>
+    <script src="/SiteAssets/team_portal_dev/assets/libs/jquery.min.js"></script>
+    <script src="/SiteAssets/team_portal_dev/assets/libs/jquery.dataTables.min.js"></script>   
+    <script src="/SiteAssets/team_portal_dev/assets/libs/angular.js"></script>
+   	<script src="/SiteAssets/team_portal_dev/assets/libs/angular-datatables.min.js"></script>
+    <script src="/SiteAssets/team_portal_dev/assets/libs/bootstrap.min.js"></script>
+    <script src="/SiteAssets/team_portal_dev/assets/libs/angular-ui-router.min.js"></script>
 
     <!-- Angular Material via CDN -->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script> -->
-    <script src="/SiteAssets/team_portal/assets/libs/angular-sanitize.js"></script>
+	  <script src="/SiteAssets/team_portal_dev/assets/libs/angular-animate.min.js"></script>
+	  <script src="/SiteAssets/team_portal_dev/assets/libs/angular-aria.min.js"></script>
+	  <script src="/SiteAssets/team_portal_dev/assets/libs//angular-messages.min.js"></script>
+	  <script src="/SiteAssets/team_portal_dev/assets/libs/angular-material.min.js"></script>
+		<script src="/SiteAssets/team_portal_dev/assets/libs/angular-sanitize.js"></script>
+<script src="/SiteAssets/team_portal_dev/assets/libs/jquery.dataTables.columnFilter.js"></script>
+<script src="/SiteAssets/team_portal_dev/assets/libs/angular-datatables.columnfilter.min.js"></script>
     <!-- Angular routes services -->
-    <script src="/SiteAssets/team_portal/app/app.module.js"></script>
-    <script src="/SiteAssets/team_portal/app/app.routes.js"></script>
-    <script src="/SiteAssets/team_portal/app/components/candidates/candidatesService.js"></script>
-    <script src="/SiteAssets/team_portal/app/components/enoms/enomsService.js"></script>
-    <script src="/SiteAssets/team_portal/app/components/taskOrders/taskOrdersService.js"></script>
+		<script src="/SiteAssets/team_portal_dev/app/app.module.js"></script>
+    <script src="/SiteAssets/team_portal_dev/app/app.routes.js"></script>
+    <script src="/SiteAssets/team_portal_dev/app/components/candidates/candidatesService.js"></script>
+    <script src="/SiteAssets/team_portal_dev/app/components/enoms/enomsService.js"></script>
+    <script src="/SiteAssets/team_portal_dev/app/components/taskOrders/taskOrdersService.js"></script>
 
-    <script src="/SiteAssets/team_portal/assets/libs/materialize.min.js"></script>
-    <script src="/SiteAssets/team_portal/assets/libs/magnific_popup.js"></script>
+    <script src="/SiteAssets/team_portal_dev/assets/libs/materialize.min.js"></script>
+    <script src="/SiteAssets/team_portal_dev/assets/libs/magnific_popup.js"></script>
+
     <script>
     $(function() {
       $(".button-collapse").sideNav();
     });
     </script>
-
+		<script language="javascript">
+         
+      </script>    
   </body>
 </html>

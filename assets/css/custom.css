@@ -17,7 +17,9 @@ a, a:hover, a:active, a:visited {
 footer.page-footer {
    background-color: #616161;
 }
-
+.s2orange-text {
+	color: #B93A18;
+}
 /**
  * 	Materialize
  */
@@ -55,11 +57,28 @@ input[type=search]:focus {
 	letter-spacing: 0;
 	text-transform: none;
 }
-caption {
+
+caption div {
+	display: inline-block;
+}
+
+caption .title {
 	color: #B93A18;
 	font-size: 1.25em;
 	padding-left: 8px;
 	padding-top: 0px;
+}
+
+caption .sp_action{
+	float: right;
+	color: #616161;
+	position: static;
+	padding-right: 10px
+}
+caption .sp_icon {
+	font-size: 20px;
+	position:relative;
+	bottom: -4px;	
 }
 /**
  * 	Footer
@@ -140,50 +159,23 @@ html, body {
 }
 
 /* Modal */
-*
-{
-  box-sizing: border-box;
-}
+.dialogdemoBasicUsage #popupContainer {
+  position: relative; }
 
-.Modal-backdrop
-{
- position: fixed;
- top: 0px;
- left: 0px;
- height:100%;
- width:100%;
- background: #000;
- z-index: 1;
- opacity: 0.5;
-}
-
-.Modal-holder
-{
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  height:100%;
-  width:100%;
-  background: transparent;
-  z-index: 2;
-  padding: 30px 15px;
-}
-.Modal-box
-{
-  margin: 0 auto;
+.dialogdemoBasicUsage .footer {
   width: 100%;
-  background: #fff;
-  padding: 15px;
-  border-radius: 4px;
-  box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
-  position: relative;
-}
+  text-align: center;
+  margin-left: 20px; }
 
-@media screen and (min-width: 992px)
-{
-  .Modal-box
-  {
-    width: 50%;
-    padding: 30px;
-  }
-}
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+  font-size: 0.8em;
+  margin-top: 50px; }
+
+.dialogdemoBasicUsage button {
+  width: 200px; }
+
+.dialogdemoBasicUsage div#status {
+  color: #c60008; }
+
+.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+  margin-bottom: 0; }
