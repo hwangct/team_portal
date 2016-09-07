@@ -8,10 +8,9 @@
     <link href="/SiteAssets/team_portal_dev/assets/css/materialize.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/custom.css">
-    <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/jquery.dataTables.min.css">
+    <!--<link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/jquery.dataTables.min.css">-->
     <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/angular-datatables.css">
-
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/angular-material.min.css">
   </head>
 
   <body ng-app="sampleApp" ng-cloak>
@@ -19,6 +18,7 @@
       <nav>
         <div class="nav-wrapper white">
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons grey-text text-darken-2">menu</i></a>
+          <a href="#"><img class="s2-logo" src="/SiteAssets/team_portal_dev/assets/images/s2.png"></a>
           <ul class="right hide-on-med-and-down">
             <li>
               <a class="grey-text text-darken-2" ui-sref="candidates">Candidates</a>
@@ -76,8 +76,8 @@
     <script src="/SiteAssets/team_portal_dev/app/components/enoms/enomsService.js"></script>
     <script src="/SiteAssets/team_portal_dev/app/components/taskOrders/taskOrdersService.js"></script>
 
-    <script src="/SiteAssets/team_portal_dev/assets/libs/materialize.min.js"></script>
-    <script src="/SiteAssets/team_portal_dev/assets/libs/magnific_popup.js"></script>
+<script src="/SiteAssets/team_portal_dev/assets/libs/materialize.min.js"></script>
+<script src="/SiteAssets/team_portal_dev/assets/libs/magnific_popup.js"></script>
 
     <script>
     $(function() {

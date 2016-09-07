@@ -1,9 +1,14 @@
-
+/**
+ * 	Global Styles
+ */
 nav ul a {
 	font-size: 1.0em;
 } 
 nav img {
-	padding-left: 15px;
+	padding-left: 8px;
+}
+nav .button-collapse {
+	left: 8px;
 }
 .side-nav a {
 	font-size: 1.0em;
@@ -19,6 +24,10 @@ footer.page-footer {
 }
 .s2orange-text {
 	color: #B93A18;
+}
+.s2-logo {
+	width: 130px;
+	height: 55px;
 }
 /**
  * 	Materialize
