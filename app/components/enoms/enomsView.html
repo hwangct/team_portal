@@ -1,34 +1,25 @@
 <table datatable="ng" class="row-border hover" >
   <thead>
     <tr>
-      <th>Company</th>
-      <th>Candidate ID</th>
-      <th>Position Title</th>
-      <th>Resume to COR</th>
-      <th>Security Info Requested</th>
-      <th>Resume Approved</th>
-      <th>Ticket to PERSEC</th>
-      <th>eNOM Submitted</th>
-      <th>Security Approved</th>
-      <th>Briefing Scheduled</th>
-      <th>Start Date</th>
+      <th>Candidate Name</th>
+      <th>Position</th>
+      <th>Candidate Status</th>
+      <th>Status Date</th>
     </tr>
   </thead>
 
   <tbody>
     <tr ng-repeat="x in enoms">
-      <td>{{x.Company}}</td>  
       <td>{{x.CandidateName}}</td> 
       <td>{{x.PosnIDId}}</td>
-      
-      <td>{{x.ResumeToCOR | date:'MM/dd/yyyy'}}</td> 
-      <td>{{x.SecurityInfoRequested | date:'MM/dd/yyyy'}}</td> 
-      <td>{{x.ResumeApproved | date:'MM/dd/yyyy'}}</td>
-      <td>{{x.TicketToPERSEC | date:'MM/dd/yyyy'}}</td> 
-      <td>{{x.ENOMSubmitted | date:'MM/dd/yyyy'}}</td> 
-      <td>{{x.SecurityApproved | date:'MM/dd/yyyy'}}</td> 
-      <td>{{x.BriefingScheduled | date:'MM/dd/yyyy'}}</td> 
-      <td>{{x.StartDate | date:'MM/dd/yyyy'}}</td> 
+      <td>
+        <div class="sp_action" id="dialogContainer" ng-controller="dialogController as ctrl" layout="row" ng-cloak>
+          <md-content>
+            <div ng-click="showCustom($event)"  flex="100"  flex-gt-md="auto" class="sp_action">{{x.CandidateStatusValue}}</div>
+          </md-content>   
+        </div>
+      </td> 
+      <td>{{x.StatusDate}}</td> 
     </tr>
   </tbody>
 </table>

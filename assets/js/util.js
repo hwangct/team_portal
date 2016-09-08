@@ -3,8 +3,9 @@ function convertDate(odata_date) {
 	var date = "";
 	if ((odata_date !== '') && (odata_date !== undefined) && (odata_date !== null)) {
 		date = new Date(parseInt(odata_date.substr(6)));
-	} 	
-	return moment(date).format("YYYY-MM-DD");
-	
+		return moment(date).format("YYYY-MM-DD");
+	} else {
+		return "";
+	}
 }
 
