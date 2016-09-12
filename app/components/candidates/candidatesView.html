@@ -39,7 +39,7 @@
     <table datatable="ng" class="display compact row-border hover">
       <caption>
         <div class="title">Candidate Submissions</div>
-        <div class="sp_action"><a class="deep-orange-text text-darken-3" ng-href="{{newsubmissionurl}}" target="_blank"><i class="deep-orange-text text-darken-3 material-icons sp_icon">library_add</i> New Item</a> </div>
+        <div class="sp_action"><a class="deep-orange-text text-darken-3" ng-href="{{newsubmissionurl}}" target="_blank"><span class="fa fa-user-plus"></span> New Submission</a> </div>
       </caption>
       <thead>
         <tr>
@@ -55,7 +55,13 @@
           <td>{{x.Company}}</td>
           <td>{{x.CandidateName}}</td>
           <td>{{x.PosnIDId}}</td>
-          <td>{{x.CandidateStatusValue}} on <span class="s2orange-text">{{x.StatusDate}}</span></td>
+          <td>
+            <div class="sp_action" id="dialogContainer" ng-controller="dialogController as ctrl" layout="row" ng-cloak>
+              <md-content>
+                <div ng-click="showCandidateStatus($event, x)"  flex="100"  flex-gt-md="auto" class="sp_action btn btn-default">{{x.CandidateStatusValue}} on <span class="s2orange-text">{{x.StatusDate}}</span></div>
+              </md-content>   
+            </div>
+          </td> 
         </tr>
       </tbody>
     </table>

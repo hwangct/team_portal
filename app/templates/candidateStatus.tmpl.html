@@ -1,0 +1,47 @@
+<md-dialog aria-label="Candidate Status" ng-cloak>
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>Candidate Status for {{modalCandidate.CandidateName}}</h2>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="closeDialog()">
+				<span class="fa fa-times fa-2x"></span>
+			</md-button>
+		</div>
+	</md-toolbar>
+
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<div id="timeline-speaker-example">
+				<h4>(Insert some text here){{}}</h4>
+				<ul class="progress-indicator stacked dark">
+					<li ng-class="{completed: modalCandidate.Created != ''}" class="current-time">
+						<span class="time"><span class="fa fa-calendar"></span>    {{modalCandidate.Created}}</span>
+						<span class="bubble"></span>
+						<span class="stacked-text"> Position Created </span>
+					</li>
+					<li ng-class="{completed: modalCandidate.Submitted != ''}" class="current-time">
+						<span class="time"><span class="fa fa-calendar"></span>    {{modalCandidate.Submitted}}</span>
+						<span class="bubble"></span>
+						<span class="stacked-text"> Submitted </span>
+					</li>
+					<li ng-class="{completed: modalCandidate.Selected != ''}" class="current-time">
+						<span class="time"><span class="fa fa-calendar"></span>    {{modalCandidate.Selected}}</span>
+						<span class="bubble"></span>
+						<span class="stacked-text"> Selected </span>
+					</li>
+					<li ng-class="{completed: modalCandidate.SecurityValidated != ''}"  class="current-time">
+						<span class="time"><span class="fa fa-calendar"></span>    {{modalCandidate.SecurityValidated}}</span> 
+						<span class="bubble"></span>
+						<span class="stacked-text"> Security Validated </span>
+					</li>
+					<li ng-class="{completed: modalCandidate.SubmittedPMO != ''}"  class="current-time">
+						<span class="time"><span class="fa fa-calendar"></span>    {{modalCandidate.SubmittedPMO}}</span> 
+						<span class="bubble"></span>
+						<span class="stacked-text"> Submitted to Customer </span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</md-dialog-content>
+
+</md-dialog>

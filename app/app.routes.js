@@ -4,7 +4,7 @@ sampleApp.controller('dialogController', dialogController);
 // Modal functions
 function dialogController ($scope, $mdDialog) {
 	$scope.status = '';
-	$scope.items = [1,2,3,4,5];
+	/*
   $scope.showAlert = function(ev) {
      $mdDialog.show(
       $mdDialog.alert()
@@ -17,7 +17,6 @@ function dialogController ($scope, $mdDialog) {
        .targetEvent(ev)
      );
   };
-
 
   $scope.showConfirm = function(event) {
    var confirm = $mdDialog.confirm()
@@ -33,16 +32,36 @@ function dialogController ($scope, $mdDialog) {
       $scope.status = 'You decided to keep your record.';
     });
   };
-
-  $scope.showCustom = function(event) {
+*/
+  $scope.showEnomStatus = function(event, x) {
    $mdDialog.show({
     clickOutsideToClose: true,
     scope: $scope,        
     preserveScope: true,           
-    templateUrl: '/SiteAssets/team_portal_dev/app/newSubmission.tmpl.html',
+    templateUrl: '/SiteAssets/team_portal_dev/app/templates/enomStatus.tmpl.html',
     parent: angular.element(document.body),
     fullscreen: $scope.customFullscreen,
-    controller: function DialogController($scope, $mdDialog) {
+    locals: {dataToPass: x},
+    controller: function DialogController($scope, dataToPass) {
+    	$scope.modalEnom = dataToPass;
+		  $scope.closeDialog = function() {
+		    $mdDialog.hide();
+		  };
+    }
+   });
+  };
+  
+  $scope.showCandidateStatus = function(event, x) {
+   $mdDialog.show({
+    clickOutsideToClose: true,
+    scope: $scope,        
+    preserveScope: true,           
+    templateUrl: '/SiteAssets/team_portal_dev/app/templates/candidateStatus.tmpl.html',
+    parent: angular.element(document.body),
+    fullscreen: $scope.customFullscreen,
+    locals: {dataToPass: x},
+    controller: function DialogController($scope, dataToPass) {
+    	$scope.modalCandidate = dataToPass;
 		  $scope.closeDialog = function() {
 		    $mdDialog.hide();
 		  };
@@ -70,7 +89,7 @@ sampleApp.config(function($stateProvider, $urlRouterProvider) {
 	  }).
 	  state('enoms', {
 	  	url: '/enoms',
-		  templateUrl: '/siteassets/team_portal/app/components/enoms/enomsView.html',
+		  templateUrl: '/siteassets/team_portal_dev/app/components/enoms/enomsView.html',
 		  controller: 'enomController',
 		  resolve: {
 		  	enoms: function(enomsLibrary) {
@@ -80,7 +99,7 @@ sampleApp.config(function($stateProvider, $urlRouterProvider) {
 	  }).
 	  state('taskorders', {
 	  	url: '/taskOrders',
-		  templateUrl: '/siteassets/team_portal/app/components/taskOrders/taskOrdersView.html',
+		  templateUrl: '/siteassets/team_portal_dev/app/components/taskOrders/taskOrdersView.html',
 		  controller: 'taskOrdersController',
 		  resolve: {
 		  	taskOrders: function(taskOrdersLibrary) {

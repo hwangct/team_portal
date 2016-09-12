@@ -8,12 +8,18 @@
     <link href="/SiteAssets/team_portal_dev/assets/css/materialize.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/custom.css">
-    <!--<link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/jquery.dataTables.min.css">-->
+    <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/angular-datatables.css">
     <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/angular-material.min.css">
+  	<link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/progress-wizard.min.css">
+  	<link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/fonts/font-awesome/css/font-awesome.min.css">
   </head>
 
   <body ng-app="sampleApp" ng-cloak>
+  	<div class="loading-wrapper" style="display: none;">
+      <div class="loading"></div>
+    <div class="loading-text">Loading...</div>
+    </div>
     <div class="contents">
       <nav>
         <div class="nav-wrapper white">

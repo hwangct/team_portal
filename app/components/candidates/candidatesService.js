@@ -13,6 +13,11 @@ candidates.factory('submissionsLibrary', ['$http', function($http, $q) {
 				// Do something with enoms here?
 				for (var x in submissions) {
 					submissions[x].StatusDate = convertDate(submissions[x].StatusDate);
+					submissions[x].Created = convertDate(submissions[x].Created);
+					submissions[x].Submitted = convertDate(submissions[x].Submitted);
+					submissions[x].Selected = convertDate(submissions[x].Selected);
+					submissions[x].SecurityValidated = convertDate(submissions[x].SecurityValidated);
+					submissions[x].SubmittedPMO = convertDate(submissions[x].SubmittedToCustomerPMO);
 				}
 				return submissions;
 			});

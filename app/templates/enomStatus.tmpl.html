@@ -1,0 +1,48 @@
+<md-dialog aria-label="Enom Status" ng-cloak>
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>Enom Status for {{modalEnom.CandidateName}}</h2>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="closeDialog()">
+				<!--<md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>-->
+				<span class="fa fa-times fa-2x"></span>
+			</md-button>
+		</div>
+	</md-toolbar>
+
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<div id="timeline-speaker-example">
+				<h4>(Insert some text here){{}}</h4>
+				<ul class="progress-indicator stacked dark">
+					<li class="current-time">
+						<span ng-class="{completed: modalEnom.ResumeApproved != ''}" class="time"><span class="fa fa-calendar"></span>{{modalEnom.ResumeApproved}}</span>
+						<span class="bubble"></span>
+						<span class="stacked-text"> Resume Approved </span>
+					</li>
+					<li ng-class="{completed: modalEnom.ResumeApproved != ''}" class="current-time">
+						<span class="time"><span class="fa fa-calendar"></span>{{modalEnom.resumeToCOR}}</span>
+						<span class="bubble"></span>
+						<span class="stacked-text"> Resume to COR </span>
+					</li>
+					<li ng-class="{completed: modalEnom.SecurityApproved != ''}" class="current-time">
+						<span class="time"><span class="fa fa-calendar"></span>{{modalEnom.SecurityApproved}}</span>
+						<span class="bubble"></span>
+						<span class="stacked-text"> Security Approved </span>
+					</li>
+					<li ng-class="{completed: modalEnom.SecurityInfoRequested != ''}"  class="current-time">
+						<span class="time"><span class="fa fa-calendar"></span>{{modalEnom.SecurityInfoRequested}}</span> 
+						<span class="bubble"></span>
+						<span class="stacked-text"> Security Info Requested </span>
+					</li>
+					<li ng-class="{completed: modalEnom.StartDate != ''}"  class="current-time">
+						<span class="time"><span class="fa fa-calendar"></span>{{modalEnom.StartDate}}</span> 
+						<span class="bubble"></span>
+						<span class="stacked-text"> Start Date </span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</md-dialog-content>
+
+</md-dialog>
