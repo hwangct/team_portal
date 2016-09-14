@@ -69,7 +69,15 @@ function dialogController ($scope, $mdDialog) {
    });
   };
 } 
-      
+
+// Datatables controller
+sampleApp.controller('dTableCtrl', dTableController);
+// Modal functions
+function dTableController ($scope, DTOptionsBuilder) {
+	$scope.dtOptions = DTOptionsBuilder.newOptions()
+	  .withPaginationType('full_numbers')
+	  .withOption('aaSorting', [1, 'asc']);
+}
 sampleApp.config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/candidates');
 	

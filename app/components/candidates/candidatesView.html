@@ -6,9 +6,9 @@
   </md-content>   
 </div>
 -->
-<div class="row">
+<div ng-controller="dTableCtrl" class="row">
   <div class="col-lg-6 col-md-12">
-    <table datatable="ng" dt-optons="showCase.dtOptions" dt-columns="showCase.dtColumns" class="display compact row-border hover">
+    <table datatable="ng" dt-options="dtOptions" class="display compact row-border hover">
       <caption>
         <div class="title">Open Positions</div>
       </caption>
@@ -35,8 +35,8 @@
     </table>
   </div>
   
-  <div class="col-lg-6 col-md-12">
-    <table datatable="ng" class="display compact row-border hover">
+  <div ng-controller="dTableCtrl"  class="col-lg-6 col-md-12">
+    <table datatable="ng" dt-options="dtOptions" class="display compact row-border hover">
       <caption>
         <div class="title">Candidate Submissions</div>
         <div class="sp_action"><a class="deep-orange-text text-darken-3" ng-href="{{newsubmissionurl}}" target="_blank"><span class="fa fa-user-plus"></span> New Submission</a> </div>
@@ -44,8 +44,8 @@
       <thead>
         <tr>
           <th>Company</th>
-          <th>Candidate</th>
           <th>ID</th>
+          <th>Candidate</th>
           <th>Status</th>
         </tr>
       </thead>
@@ -53,8 +53,8 @@
       <tbody>
         <tr ng-repeat="x in submissions">
           <td>{{x.Company}}</td>
-          <td>{{x.CandidateName}}</td>
           <td>{{x.PosnIDId}}</td>
+          <td>{{x.CandidateName}}</td> 
           <td>
             <div class="sp_action" id="dialogContainer" ng-controller="dialogController as ctrl" layout="row" ng-cloak>
               <md-content>
