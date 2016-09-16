@@ -8,7 +8,7 @@
 -->
 <div ng-controller="dTableCtrl" class="row">
   <div class="col-lg-6 col-md-12">
-    <table datatable="ng" dt-options="dtOptions" class="display compact row-border hover">
+    <table datatable="ng" dt-options="dtOptions" class="display row-border hover">
       <caption>
         <div class="title">Open Positions</div>
       </caption>
@@ -20,23 +20,25 @@
           <th>Family</th>
           <th>Level</th>
           <th>Site</th>
+          <th>Open</th>
         </tr>
       </thead>
 
       <tbody>
         <tr ng-repeat="x in positions">
-          <td>{{x.PosnTitle}}</td>
+          <td><span ng-class="{hidden: x.openDays > 14}" class="new badge deep-orange darken-4"> </span>{{x.PosnTitle}}</td>
           <td>{{x.PosnID}}</td>
           <td>{{x.LaborFamily}}</td>
           <td>{{x.LaborLevel}}</td>
           <td>{{x.Site}}</td>
+          <td>{{x.openDays}}</td>
         </tr>
       </tbody>
     </table>
   </div>
   
   <div ng-controller="dTableCtrl"  class="col-lg-6 col-md-12">
-    <table datatable="ng" dt-options="dtOptions" class="display compact row-border hover">
+    <table datatable="ng" dt-options="dtOptions" class="display row-border hover">
       <caption>
         <div class="title">Candidate Submissions</div>
         <div class="sp_action"><a class="deep-orange-text text-darken-3" ng-href="{{newsubmissionurl}}" target="_blank"><span class="fa fa-user-plus"></span> New Submission</a> </div>

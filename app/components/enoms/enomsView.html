@@ -1,25 +1,27 @@
-<table datatable="ng" class="row-border hover" >
-  <thead>
-    <tr>
-      <th>Candidate Name</th>
-      <th>Position</th>
-      <th>Candidate Status</th>
-      <th>Status Date</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr ng-repeat="x in enoms">
-      <td>{{x.CandidateName}}</td> 
-      <td>{{x.PosnIDId}}</td>
-      <td>
-        <div class="sp_action" id="dialogContainer" ng-controller="dialogController as ctrl" layout="row" ng-cloak>
-          <md-content>
-            <div ng-click="showEnomStatus($event, x)"  flex="100"  flex-gt-md="auto" class="sp_action btn btn-default">{{x.CandidateStatusValue}}</div>
-          </md-content>   
-        </div>
-      </td> 
-      <td>{{x.StatusDate}}</td> 
-    </tr>
-  </tbody>
-</table>
+<div ng-controller="dTableCtrl" class="row">
+  <table datatable="ng" dt-options="dtOptions" class="display row-border hover" >
+    <thead>
+      <tr>
+        <th>Candidate Name</th>
+        <th>Position</th>
+        <th>Candidate Status</th>
+        <th>Status Date</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr ng-repeat="x in enoms">
+        <td>{{x.CandidateName}}</td> 
+        <td>{{x.PosnIDId}}</td>
+        <td>
+          <div class="sp_action" id="dialogContainer" ng-controller="dialogController as ctrl" layout="row" ng-cloak>
+            <md-content>
+              <div ng-click="showEnomStatus($event, x)"  flex="100"  flex-gt-md="auto" class="sp_action btn btn-default">{{x.CandidateStatusValue}}</div>
+            </md-content>   
+          </div>
+        </td> 
+        <td>{{x.StatusDate}}</td> 
+      </tr>
+    </tbody>
+  </table>
+</div>
