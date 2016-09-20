@@ -87,12 +87,9 @@ sampleApp.config(function($stateProvider, $urlRouterProvider) {
 		  templateUrl: '/siteassets/team_portal_dev/app/components/candidates/candidatesView.html',
 		  controller: 'candidatesController',
 		  resolve: {
-		  	submissions: function(submissionsLibrary) {
-		  		return submissionsLibrary.getSubmissions();
-		  	},
-	  		positions: function(positionsLibrary) {
-	  			return positionsLibrary.getPositions();
-	  		}
+		  	candidates: function(candidatesLibrary) {
+		  		return candidatesLibrary.getCandidates();
+		  	}
 		  }
 	  }).
 	  state('enoms', {

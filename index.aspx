@@ -59,6 +59,7 @@
       </div>
     </footer>
    	<script src="/SiteAssets/team_portal_dev/assets/js/util.js"></script>
+   	<script src="/SiteAssets/team_portal_dev/assets/libs/lodash.js"></script>
     <script src="/SiteAssets/team_portal_dev/assets/libs/moment.js"></script>
     <script src="/SiteAssets/team_portal_dev/assets/libs/jquery.min.js"></script>
     <script src="/SiteAssets/team_portal_dev/assets/libs/jquery.dataTables.min.js"></script>   

@@ -7,8 +7,8 @@
 </div>
 -->
 <div ng-controller="dTableCtrl" class="row">
-  <div class="col-lg-6 col-md-12">
-    <table datatable="ng" dt-options="dtOptions" class="display row-border hover">
+  <div class="col-lg-12 col-md-12">
+    <table datatable="ng" dt-options="dtOptions" class="compact display row-border hover">
       <caption>
         <div class="title">Open Positions</div>
       </caption>
@@ -36,9 +36,9 @@
       </tbody>
     </table>
   </div>
-  
-  <div ng-controller="dTableCtrl"  class="col-lg-6 col-md-12">
-    <table datatable="ng" dt-options="dtOptions" class="display row-border hover">
+  <hr class="divider"></hr>
+  <div ng-controller="dTableCtrl"  class="col-lg-12 col-md-12">
+    <table datatable="ng" dt-options="dtOptions" class="compact display row-border hover">
       <caption>
         <div class="title">Candidate Submissions</div>
         <div class="sp_action"><a class="deep-orange-text text-darken-3" ng-href="{{newsubmissionurl}}" target="_blank"><span class="fa fa-user-plus"></span> New Submission</a> </div>

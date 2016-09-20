@@ -1,60 +1,54 @@
 var candidates = angular.module('candidatesService', []);
 
-candidates.factory('submissionsLibrary', ['$http', function($http, $q) {
-	var submissions = [];
-	var obj = {};
-	
-	return {
-		getSubmissions: function() {
-
-			var url = "../_vti_bin/listdata.svc/Submissions";
-			return $http.get(url).then(function(result) {
-				submissions = result.data.d.results;
-				// Do something with enoms here?
-				for (var x in submissions) {
-					submissions[x].StatusDate = convertDate(submissions[x].StatusDate);
-					submissions[x].Created = convertDate(submissions[x].Created);
-					submissions[x].CreatedDays = getDaysinStatus(submissions[x].Created);
-					submissions[x].Submitted = convertDate(submissions[x].Submitted);
-					submissions[x].SubmittedDays = getDaysinStatus(submissions[x].Submitted);
-					submissions[x].Selected = convertDate(submissions[x].Selected);
-					submissions[x].SelectedDays = getDaysinStatus(submissions[x].Selected);
-					submissions[x].SecurityValidated = convertDate(submissions[x].SecurityValidated);
-					submissions[x].SecurityValidatedDays = getDaysinStatus(submissions[x].SecurityValidated);
-					submissions[x].SubmittedPMO = convertDate(submissions[x].SubmittedToCustomerPMO);
-					submissions[x].SubmittedPMODays = getDaysinStatus(submissions[x].SubmittedToCustomerPMO);
-				}
-				return submissions;
-			});
-		}
+candidates.factory('candidatesLibrary', ['$http','$q', function($http, $q) {
+	// Initialize variables
+	var obj = {
+		open_pos_arr: [],
+		pos_arr: [],
+		sub_arr: []
 	};
-}]);
-
-candidates.factory('positionsLibrary', ['$http', function($http, $q) {
-	var positions = [];
-	var open_positions = [];
-	var obj = {};
+	
+	var pos;
+	var sub;
 	
 	return {
-		getPositions: function() {
-			if(open_positions.length > 0) {
-				// Don't add more to the array until refresh?
-				return open_positions;
-			}
+		getCandidates: function() {
+			var pos_url = "../_vti_bin/listdata.svc/Positions";
+			var sub_url = "../_vti_bin/listdata.svc/Submissions";
+			pos =  $http.get(pos_url, {cache: false}); 
+			sub = $http.get(sub_url, {cache: false});
 			
-			var url = "../_vti_bin/listdata.svc/Positions";
-			return $http.get(url).then(function(result) {
-				positions = result.data.d.results;
+			// Resolve all promises
+			return $q.all([pos, sub]).then(function(values) {
+				obj.pos_arr = values[0].data.d.results;
+				obj.sub_arr = values[1].data.d.results;
+				
 				// Only return open positions;
-				for (var x in positions) {
-					if(positions[x].StatusValue !== "Filled") {
+				for (var x in obj.pos_arr) {
+					if(obj.pos_arr[x].StatusValue !== "Filled") {
 						// add open position
-						positions[x].openDays = getDaysinStatus(convertDate(positions[x].OpenDate));
-						open_positions.push(positions[x]);
+						obj.pos_arr[x].openDays = getDaysinStatus(convertDate(obj.pos_arr[x].OpenDate));
+						obj.open_pos_arr.push(obj.pos_arr[x]);
 					}
 				}
-				return open_positions;
+				
+				// Calculate days and dates for submisisons 
+				for (var x in obj.sub_arr) {
+					obj.sub_arr[x].StatusDate = convertDate(obj.sub_arr[x].StatusDate);
+					obj.sub_arr[x].Created = convertDate(obj.sub_arr[x].Created);
+					obj.sub_arr[x].CreatedDays = getDaysinStatus(obj.sub_arr[x].Created);
+					obj.sub_arr[x].Submitted = convertDate(obj.sub_arr[x].Submitted);
+					obj.sub_arr[x].SubmittedDays = getDaysinStatus(obj.sub_arr[x].Submitted);
+					obj.sub_arr[x].Selected = convertDate(obj.sub_arr[x].Selected);
+					obj.sub_arr[x].SelectedDays = getDaysinStatus(obj.sub_arr[x].Selected);
+					obj.sub_arr[x].SecurityValidated = convertDate(obj.sub_arr[x].SecurityValidated);
+					obj.sub_arr[x].SecurityValidatedDays = getDaysinStatus(obj.sub_arr[x].SecurityValidated);
+					obj.sub_arr[x].SubmittedPMO = convertDate(obj.sub_arr[x].SubmittedToCustomerPMO);
+					obj.sub_arr[x].SubmittedPMODays = getDaysinStatus(obj.sub_arr[x].SubmittedToCustomerPMO);
+				}
+				return obj;
 			});
 		}
 	};
 }]);
+
