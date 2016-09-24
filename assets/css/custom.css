@@ -1,6 +1,12 @@
 /**
  * 	Global Styles
  */
+.m-l-1 {
+	margin-left: 1.0rem;
+}
+body {
+	font-family: proxima-nova, sans-serif;
+}
 nav ul a {
 	font-size: 1.0em;
 }
@@ -88,13 +94,13 @@ table.dataTable thead .sorting {
 	height: 1.75em;
 }
 .dataTables_length {
-	margin: 0;
+	margin: 0 !important;
 }
 .dataTables_wrapper .btn, .dataTables_wrapper .btn-large, .dataTables_wrapper .btn-flat {
 	letter-spacing: 0;
 	text-transform: none;
 	padding: 0 4px;
-	height: 22px;
+	height: 23px;
 }
 .dataTable caption div {
 	display: inline-block;
@@ -102,7 +108,7 @@ table.dataTable thead .sorting {
 .dataTable caption .title {
 	color: #B93A18;
 	font-size: 1.25em;
-	padding-left: 8px;
+	padding-left: 0px;
 	padding-top: 0px;
 }
 .dataTable caption .sp_action {

@@ -1,4 +1,4 @@
-var sampleApp = angular.module('sampleApp', ['ngMaterial', 'ui.router', 'datatables', 'datatables.columnfilter', 'candidatesService', 'enomsService', 'taskOrdersService', 'myApp.controllers']);
+var sampleApp = angular.module('sampleApp', ['ngMaterial', 'ui.router', 'datatables', 'datatables.columnfilter', 'positionsService', 'candidatesService', 'enomsService', 'taskOrdersService', 'myApp.controllers']);
 
 sampleApp.controller('dialogController', dialogController);
 // Modal functions
@@ -79,9 +79,19 @@ function dTableController ($scope, DTOptionsBuilder) {
 	  .withOption('aaSorting', [1, 'asc']);
 }
 sampleApp.config(function($stateProvider, $urlRouterProvider) {
-	$urlRouterProvider.otherwise('/candidates');
+	$urlRouterProvider.otherwise('/positions');
 	
 	$stateProvider.
+		state('positions', {
+	  	url: '/positions',
+		  templateUrl: '/siteassets/team_portal_dev/app/components/positions/positionsView.html',
+		  controller: 'positionsController',
+		  resolve: {
+		  	positions: function(positionsLibrary) {
+		  		return positionsLibrary.getPositions();
+		  	}
+		  }
+	  }).
 	  state('candidates', {
 	  	url: '/candidates',
 		  templateUrl: '/siteassets/team_portal_dev/app/components/candidates/candidatesView.html',

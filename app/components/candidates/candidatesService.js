@@ -13,8 +13,10 @@ candidates.factory('candidatesLibrary', ['$http','$q', function($http, $q) {
 	
 	return {
 		getCandidates: function() {
-			var pos_url = "../_vti_bin/listdata.svc/Positions";
+			var pos_url = "../_vti_bin/listdata.svc/Positions?$expand=Attachments";
 			var sub_url = "../_vti_bin/listdata.svc/Submissions";
+			var path = "";
+			var temp_html;
 			pos =  $http.get(pos_url, {cache: false}); 
 			sub = $http.get(sub_url, {cache: false});
 			
@@ -22,12 +24,18 @@ candidates.factory('candidatesLibrary', ['$http','$q', function($http, $q) {
 			return $q.all([pos, sub]).then(function(values) {
 				obj.pos_arr = values[0].data.d.results;
 				obj.sub_arr = values[1].data.d.results;
+				obj.open_pos_arr = [];
 				
 				// Only return open positions;
 				for (var x in obj.pos_arr) {
 					if(obj.pos_arr[x].StatusValue !== "Filled") {
 						// add open position
 						obj.pos_arr[x].openDays = getDaysinStatus(convertDate(obj.pos_arr[x].OpenDate));
+
+						for (var y = 0; y < obj.pos_arr[x].Attachments.results.length; y++) {
+							obj.pos_arr[x].Attachments.results[y].url = getSPSitePath() + "/" + getSPAttachment( obj.pos_arr[x].Attachments.results[y]);// + '?Web=1';
+						}					
+						obj.pos_arr[x].pdlink = temp_html; 						
 						obj.open_pos_arr.push(obj.pos_arr[x]);
 					}
 				}
@@ -45,6 +53,8 @@ candidates.factory('candidatesLibrary', ['$http','$q', function($http, $q) {
 					obj.sub_arr[x].SecurityValidatedDays = getDaysinStatus(obj.sub_arr[x].SecurityValidated);
 					obj.sub_arr[x].SubmittedPMO = convertDate(obj.sub_arr[x].SubmittedToCustomerPMO);
 					obj.sub_arr[x].SubmittedPMODays = getDaysinStatus(obj.sub_arr[x].SubmittedToCustomerPMO);
+					var incumbentStr = getString(obj.sub_arr[x].IncumbentTO);
+					obj.sub_arr[x].IncumbentTO = incumbentStr;
 				}
 				return obj;
 			});

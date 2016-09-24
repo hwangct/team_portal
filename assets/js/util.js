@@ -23,3 +23,38 @@ function getDaysinStatus(odata_date) {
 	return days;
 }
 
+// Return path of the current subsite URL (equivalent to _spPageContextInfo.siteAbsoluteUrl and _spPageContextInfo.webServerRelativeUrl)
+function getSPSitePath() {
+	var url = window.location.origin;
+	var path_arr = window.location.pathname.split("/");
+	var path = "";
+	// This part needs to be tested
+	for (var x = 0; x < path_arr.length - 2; x++) {
+		// Only append valid strings
+		if (path_arr[x]) {
+			path += "/" + path_arr[x];
+		}
+	}
+	return (url+path);
+}
+
+// Return path to attachment
+function getSPAttachment(attachment) {
+	var url = "";
+	// Check for empty object
+	if (_.isEmpty(attachment)) {
+		console.log("Empty object to attachment");
+	} else {
+		url = "Lists/" + attachment.EntitySet + "/Attachments/" + attachment.ItemId + "/" + attachment.Name;
+	}
+	return url;
+}
+
+// Checks for null and converts to string
+function getString(obj) {
+	if (_.isNull(obj)) {
+		return "";
+	} else {
+		return obj;
+	}
+}

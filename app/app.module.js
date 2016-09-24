@@ -1,8 +1,11 @@
 var ctrl = angular.module('myApp.controllers', ['ngSanitize']);
 
+ctrl.controller('positionsController', ['$scope', 'positions', function($scope, positions) {
+	$scope.positions = positions;
+}]);
 ctrl.controller('candidatesController', ['$scope', 'candidates', function($scope, candidates) {
 	$scope.submissions = candidates.sub_arr;
-	$scope.positions = candidates.open_pos_arr;
+	//$scope.positions = candidates.open_pos_arr;
 	$scope.newsubmissionurl = newSubmissionUrl("Submissions/CandidateSubmission2.aspx");
 }]);
 ctrl.controller('enomController', ['$scope', 'enoms', function($scope, enoms) {

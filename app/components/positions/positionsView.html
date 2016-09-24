@@ -1,0 +1,38 @@
+<div ng-controller="dTableCtrl" class="row">
+  <div class="col-lg-12 col-md-12">
+    <table datatable="ng" dt-options="dtOptions" class="compact display row-border hover">
+      <caption>
+        <div class="title">Open Positions</div>
+      </caption>
+      
+      <thead>
+        <tr>
+          <th>PosnTitle</th>
+          <th>PosnID</th>
+          <th>LaborFamily</th>
+          <th>LaborLevel</th>
+          <th>Site</th>
+          <th>Open Date</th>
+          <!--<th>PD</th>-->
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="x in positions">
+          <td><span ng-class="{hidden: x.openDays > 14}" class="new badge deep-orange darken-4"> </span>{{x.PosnTitle}}</td>
+          <td>{{x.PosnID}}</td>
+          <td>{{x.LaborFamily}}</td>
+          <td>{{x.LaborLevel}}</td>
+          <td>{{x.Site}}</td>
+          <td>{{x.openDays}}</td>
+          <!--
+          <td>
+            <span ng-repeat="attachment in x.Attachments.results">
+              <a ng-href="{{attachment.url}}"><div class="sp_action btn btn-default">{{attachment.Name}}<i class="m-l-1 fa fa-download" aria-hidden="true"></i></div>  </a> 
+            </span>
+          </td>-->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

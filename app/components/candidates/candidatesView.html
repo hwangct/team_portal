@@ -6,7 +6,9 @@
   </md-content>   
 </div>
 -->
-<div ng-controller="dTableCtrl" class="row">
+
+
+<!--<div ng-controller="dTableCtrl" class="row">
   <div class="col-lg-12 col-md-12">
     <table datatable="ng" dt-options="dtOptions" class="compact display row-border hover">
       <caption>
@@ -21,6 +23,7 @@
           <th>Level</th>
           <th>Site</th>
           <th>Open</th>
+          <th>PD</th>
         </tr>
       </thead>
 
@@ -32,40 +35,52 @@
           <td>{{x.LaborLevel}}</td>
           <td>{{x.Site}}</td>
           <td>{{x.openDays}}</td>
+          <td>
+            <span ng-repeat="attachment in x.Attachments.results">
+              <a ng-href="{{attachment.url}}"><div class="sp_action btn btn-default">{{attachment.Name}}<i class="m-l-1 fa fa-download" aria-hidden="true"></i></div>  </a> 
+            </span>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
-  <hr class="divider"></hr>
-  <div ng-controller="dTableCtrl"  class="col-lg-12 col-md-12">
-    <table datatable="ng" dt-options="dtOptions" class="compact display row-border hover">
-      <caption>
-        <div class="title">Candidate Submissions</div>
-        <div class="sp_action"><a class="deep-orange-text text-darken-3" ng-href="{{newsubmissionurl}}" target="_blank"><span class="fa fa-user-plus"></span> New Submission</a> </div>
-      </caption>
-      <thead>
-        <tr>
-          <th>Company</th>
-          <th>ID</th>
-          <th>Candidate</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr ng-repeat="x in submissions">
-          <td>{{x.Company}}</td>
-          <td>{{x.PosnIDId}}</td>
-          <td>{{x.CandidateName}}</td> 
-          <td>
-            <div class="sp_action" id="dialogContainer" ng-controller="dialogController as ctrl" layout="row" ng-cloak>
-              <md-content>
-                <div ng-click="showCandidateStatus($event, x)"  flex="100"  flex-gt-md="auto" class="sp_action btn btn-default">{{x.CandidateStatusValue}} on <span class="s2orange-text">{{x.StatusDate}}</span></div>
-              </md-content>   
-            </div>
-          </td> 
-        </tr>
-      </tbody>
-    </table>
+  <hr class="divider"></hr> -->
+  <div ng-controller="dTableCtrl"  class="row">
+    <div class="col-lg-12 col-md-12">
+      <table datatable="ng" dt-options="dtOptions" class="compact display row-border hover">
+        <caption>
+          <div class="title">Candidate Submissions</div>
+          <div class="sp_action"><a class="deep-orange-text text-darken-3" ng-href="{{newsubmissionurl}}" target="_blank"><span class="fa fa-user-plus"></span> New Submission</a> </div>
+        </caption>
+        <thead>
+          <tr>
+            <th>Candidate Name</th>
+            <th>Position</th>
+            <th>Company</th>
+            <th>Candidate Type</th>
+            <th>Incumbent?</th>
+            <th>Incumbent TO:</th>
+            <th>Candidate Status</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr ng-repeat="x in submissions">
+            <td>{{x.CandidateName}}</td>
+            <td>{{x.PosnIDId}}</td>
+            <td>{{x.Company}}</td> 
+            <td>{{x.CandidateTypeValue}}</td>
+            <td>{{x.Incumbent}}</td>
+            <td>{{x.IncumbentTO}}</td>
+            <td>
+              <div class="sp_action" id="dialogContainer" ng-controller="dialogController as ctrl" layout="row" ng-cloak>
+                <md-content>
+                  <div ng-click="showCandidateStatus($event, x)"  flex="100"  flex-gt-md="auto" class="sp_action btn btn-default">{{x.CandidateStatusValue}} on <span class="s2orange-text">{{x.StatusDate}}</span></div>
+                </md-content>   
+              </div>
+            </td> 
+          </tr>
+        </tbody>
+      </table>
   </div>
 </div>
