@@ -1,13 +1,11 @@
 var positions = angular.module('positionsService', []);
 
 positions.factory('positionsLibrary', function($http, $q) {
-	// Initialize variables
-	var open_pos_arr = [];
-	var pos_arr = [];
-	
-	var enoms = [];
-	return {
+		return {
 		getPositions: function() {
+			// Initialize variables
+			var open_pos_arr = [];
+			var pos_arr = [];
 			var pos_url = "../_vti_bin/listdata.svc/Positions?$expand=Attachments";
 			var path = "";
 			var temp_html;
@@ -25,6 +23,7 @@ positions.factory('positionsLibrary', function($http, $q) {
 						for (var y = 0; y < pos_arr[x].Attachments.results.length; y++) {
 							pos_arr[x].Attachments.results[y].url = getSPSitePath() + "/" + getSPAttachment( pos_arr[x].Attachments.results[y]);// + '?Web=1';
 						}					
+						pos_arr[x].detailslink = getSPSitePath() + "/" + getSPDetails("positions", pos_arr[x].Id);
 						pos_arr[x].pdlink = temp_html; 						
 						open_pos_arr.push(pos_arr[x]);
 					}

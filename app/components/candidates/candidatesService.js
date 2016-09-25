@@ -14,7 +14,7 @@ candidates.factory('candidatesLibrary', ['$http','$q', function($http, $q) {
 	return {
 		getCandidates: function() {
 			var pos_url = "../_vti_bin/listdata.svc/Positions?$expand=Attachments";
-			var sub_url = "../_vti_bin/listdata.svc/Submissions";
+			var sub_url = "../_vti_bin/listdata.svc/Submissions?$expand=PosnID";
 			var path = "";
 			var temp_html;
 			pos =  $http.get(pos_url, {cache: false}); 

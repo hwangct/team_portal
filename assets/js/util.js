@@ -50,6 +50,14 @@ function getSPAttachment(attachment) {
 	return url;
 }
 
+// Return path to details page
+function getSPDetails(listname, id) {
+	var url = "";
+	// Check for empty object
+	url = "Lists/" + listname + "/DispForm.aspx?ID=" + id ;
+	return url;
+}
+
 // Checks for null and converts to string
 function getString(obj) {
 	if (_.isNull(obj)) {

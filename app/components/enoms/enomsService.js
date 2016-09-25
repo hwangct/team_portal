@@ -6,7 +6,7 @@ enoms.factory('enomsLibrary', function($http, $q) {
 	
 	return {
     getEnoms: function() {
-	    var url = "../_vti_bin/listdata.svc/Submissions";
+	    var url = "../_vti_bin/listdata.svc/Submissions?$expand=PosnID";
 	  	return $http.get(url).then(function(result) {
 				enoms = result.data.d.results;
 				for (var x in enoms) {

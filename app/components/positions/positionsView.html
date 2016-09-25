@@ -19,7 +19,7 @@
 
       <tbody>
         <tr ng-repeat="x in positions">
-          <td><span ng-class="{hidden: x.openDays > 14}" class="new badge deep-orange darken-4"> </span>{{x.PosnTitle}}</td>
+          <td><span ng-class="{hidden: x.openDays > 14}" class="new badge deep-orange darken-4"> </span><a ng-href="{{x.detailslink}}" target="_blank">{{x.PosnTitle}}</a></td>
           <td>{{x.PosnID}}</td>
           <td>{{x.LaborFamily}}</td>
           <td>{{x.LaborLevel}}</td>
