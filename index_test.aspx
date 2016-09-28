@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/angular-datatables.css">
     <link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/angular-material.min.css">
   	<link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/progress-wizard.min.css">
+  	<link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/css/progress-tracker.css">
   	<link rel="stylesheet" href="/SiteAssets/team_portal_dev/assets/fonts/font-awesome/css/font-awesome.min.css">
   </head>
 

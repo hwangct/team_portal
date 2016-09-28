@@ -6,7 +6,7 @@ enoms.factory('enomsLibrary', function($http, $q) {
 	
 	return {
     getEnoms: function() {
-	    var url = "../_vti_bin/listdata.svc/Submissions?$expand=PosnID";
+	    var url = "../_vti_bin/listdata.svc/Submissions?$expand=PosnID,CandidateStatus";
 	  	return $http.get(url).then(function(result) {
 				enoms = result.data.d.results;
 				for (var x in enoms) {
@@ -29,6 +29,17 @@ enoms.factory('enomsLibrary', function($http, $q) {
 					enoms[x].StartDate  = convertDate(enoms[x].StartDate );
 					enoms[x].StartDateDays  = getDaysinStatus(enoms[x].StartDate );
 					
+					// submission statuses
+					enoms[x].Created = convertDate(enoms[x].Created);
+					enoms[x].CreatedDays = getDaysinStatus(enoms[x].Created);
+					enoms[x].Submitted = convertDate(enoms[x].Submitted);
+					enoms[x].SubmittedDays = getDaysinStatus(enoms[x].Submitted);
+					enoms[x].Selected = convertDate(enoms[x].Selected);
+					enoms[x].SelectedDays = getDaysinStatus(enoms[x].Selected);
+					enoms[x].SecurityValidated = convertDate(enoms[x].SecurityValidated);
+					enoms[x].SecurityValidatedDays = getDaysinStatus(enoms[x].SecurityValidated);
+					enoms[x].SubmittedPMO = convertDate(enoms[x].SubmittedToCustomerPMO);
+					enoms[x].SubmittedPMODays = getDaysinStatus(enoms[x].SubmittedToCustomerPMO);
 				}
 				return enoms;
 			});

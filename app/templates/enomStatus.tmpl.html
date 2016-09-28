@@ -1,4 +1,4 @@
-<md-dialog aria-label="Enom Status" ng-cloak>
+<md-dialog aria-label="Enom Status" ng-cloak class="large-modal">
 	<md-toolbar>
 		<div class="md-toolbar-tools">
 			<h2>Enom Status for {{modalEnom.CandidateName}}</h2>
@@ -12,37 +12,78 @@
 
 	<md-dialog-content>
 		<div class="md-dialog-content">
-			<div id="timeline-speaker-example">
-				<h4>(Insert some text here){{}}</h4>
-				<ul class="progress-indicator stacked dark">
-					<li class="current-time">
-						<span ng-class="{completed: modalEnom.ResumeApproved != ''}" class="time"><span class="fa fa-calendar"></span>{{modalEnom.ResumeApproved}}</span>
-						<span class="bubble"></span>
-						<span class="stacked-text"> Resume Approved </span>
-					</li>
-					<li ng-class="{completed: modalEnom.ResumeApproved != ''}" class="current-time">
-						<span class="time"><span class="fa fa-calendar"></span>{{modalEnom.resumeToCOR}}</span>
-						<span class="bubble"></span>
-						<span class="stacked-text"> Resume to COR </span>
-					</li>
-					<li ng-class="{completed: modalEnom.SecurityApproved != ''}" class="current-time">
-						<span class="time"><span class="fa fa-calendar"></span>{{modalEnom.SecurityApproved}}</span>
-						<span class="bubble"></span>
-						<span class="stacked-text"> Security Approved </span>
-					</li>
-					<li ng-class="{completed: modalEnom.SecurityInfoRequested != ''}"  class="current-time">
-						<span class="time"><span class="fa fa-calendar"></span>{{modalEnom.SecurityInfoRequested}}</span> 
-						<span class="bubble"></span>
-						<span class="stacked-text"> Security Info Requested </span>
-					</li>
-					<li ng-class="{completed: modalEnom.StartDate != ''}"  class="current-time">
-						<span class="time"><span class="fa fa-calendar"></span>{{modalEnom.StartDate}}</span> 
-						<span class="bubble"></span>
-						<span class="stacked-text"> Start Date </span>
-					</li>
-				</ul>
-			</div>
-		</div>
+      <ul class="progress-tracker progress-tracker--text progress-tracker--center">
+        <li ng-class="{complete: modalEnom.Submitted != ''}"  class="progress-step">
+          <span class="progress-text progress-days"><h4>&nbsp;</h4></span>
+          <span class="progress-marker"></span>
+          <span class="progress-text"> <h4 class="progress-title">Submitted</h4> {{modalEnom.Submitted}}</span>
+        </li>
+
+        <li ng-class="{complete: modalEnom.Selected != ''}" class="progress-step">
+          <span class="progress-text progress-days"><h4>{{modalEnom.SubmittedDays - modalEnom.SelectedDays}} days</h4></span>
+          <span class="progress-marker"></span>
+          <span class="progress-text"> <h4 class="progress-title">Selected</h4> {{modalEnom.Selected}} </span>
+        </li>
+
+        <li ng-class="{complete: modalEnom.SecurityValidated != ''}"  class="progress-step">
+          <span class="progress-text progress-days"><h4>&nbsp;</h4></span>
+          <span class="progress-marker"></span>
+          <span class="progress-text"> <h4 class="progress-title">Security Validated</h4> {{modalEnom.SecurityValidated}} </span>
+        </li>
+
+        <li ng-class="{complete: modalEnom.SubmittedPMO != ''}"  class="progress-step">
+          <span class="progress-text progress-days"><h4>&nbsp;</h4></span>
+          <span class="progress-marker"></span>
+          <span class="progress-text"> <h4 class="progress-title">Submitted to Customer PMO</h4> {{modalEnom.SubmittedPMO}} </span>
+        </li>
+      </ul>
+    </div>
+		
+		<div class="md-dialog-content">
+      <ul class="progress-tracker progress-tracker--text progress-tracker--center">
+        <li ng-class="{complete: modalEnom.ResumeApproved != ''}"  class="progress-step">
+          <span class="progress-text progress-days"><h4>&nbsp;</h4></span>
+          <span class="progress-marker"></span>
+          <span class="progress-text"> <h4 class="progress-title">Customer PMO Approved</h4> {{modalEnom.ResumeApproved}}</span>
+        </li>
+
+        <li ng-class="{complete: modalEnom.TicketToPERSEC != ''}" class="progress-step">
+          <span class="progress-text progress-days"><h4>&nbsp;</h4></span>
+          <span class="progress-marker"></span>
+          <span class="progress-text"> <h4 class="progress-title">Submitted to Customer PMO Security</h4> {{modalEnom.TicketToPERSEC}} </span>
+        </li>
+
+        <li ng-class="{complete: modalEnom.ENOMSubmitted != ''}"  class="progress-step">
+          <span class="progress-text progress-days"><h4>&nbsp;</h4></span>
+          <span class="progress-marker"></span>
+          <span class="progress-text"> <h4 class="progress-title">Adjudicated</h4> {{modalEnom.ENOMSubmitted}} </span>
+        </li>
+
+        <li ng-class="{complete: modalEnom.SecurityApproved != ''}"  class="progress-step">
+          <span class="progress-text progress-days"><h4>&nbsp;</h4></span>
+          <span class="progress-marker"></span>
+          <span class="progress-text"> <h4 class="progress-title">Scheduled</h4> {{modalEnom.SecurityApproved}} </span>
+        </li>
+        
+        <li ng-class="{complete: modalEnom.BriefingScheduled != ''}"  class="progress-step">
+          <span class="progress-text progress-days"><h4>&nbsp;</h4></span>
+          <span class="progress-marker"></span>
+          <span class="progress-text"> <h4 class="progress-title">Indoc Date</h4> {{modalEnom.BriefingScheduled}} </span>
+        </li>
+        
+        <li ng-class="{complete: modalEnom.StartDate != ''}"  class="progress-step">
+          <span class="progress-text progress-days"><h4>&nbsp;</h4></span>
+          <span class="progress-marker"></span>
+          <span class="progress-text"> <h4 class="progress-title">Started</h4> {{modalEnom.StartDate}} </span>
+        </li>
+        
+        <li ng-class="{complete: modalEnom.Closed != ''}"  class="progress-step">
+          <span class="progress-text progress-days"><h4>&nbsp;</h4></span>
+          <span class="progress-marker"></span>
+          <span class="progress-text"> <h4 class="progress-title">Closed</h4> {{modalEnom.Closed}} </span>
+        </li>
+      </ul>
+    </div>
 	</md-dialog-content>
 
 </md-dialog>

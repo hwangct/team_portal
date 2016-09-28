@@ -226,6 +226,22 @@ md-toolbar:not(.md-menu-toolbar) {
 	background-color: #B93A18;
 	color: rgba(255,255,255,0.87);
 }
+.large-modal {
+	width: 80% !important;
+}
+
+/* progress tracker */
+.progress-text {
+	position: relative;
+	top: -63px;
+}
+.progress-days {
+  text-align: left;
+  margin-left: -44px;
+}
+.progress-marker {
+	top: -67px;
+}
 /* Timeline vertical bars */
 md-dialog {
 	width: 500px;
@@ -284,9 +300,10 @@ md-dialog {
 }
 #timeline .days-between {
 	position: relative;
-	top: 19px;
-	left: -12px;
+	top: 26px;
+	font-style: oblique;
 }
+
 @media handheld, screen and (max-width: 400px) {
 	.container {
 		margin: 0;
