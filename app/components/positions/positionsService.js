@@ -17,7 +17,7 @@ positions.factory('positionsLibrary', function($http, $q) {
 				for (var x in pos_arr) {
 					if(pos_arr[x].StatusValue !== "Filled") {
 						// add open position
-						pos_arr[x].openDate = convertDate(pos_arr[x].openDate);
+						pos_arr[x].OpenDate = convertDate(pos_arr[x].OpenDate);
 						pos_arr[x].openDays = getDaysinStatus(convertDate(pos_arr[x].OpenDate));
 
 						for (var y = 0; y < pos_arr[x].Attachments.results.length; y++) {
