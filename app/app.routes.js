@@ -34,11 +34,12 @@ function dialogController ($scope, $mdDialog) {
   };
 */
   $scope.showEnomStatus = function(event, x) {
+  	var url = getSPProjectAssets() + "/app/templates/enomStatus.tmpl.html";
    $mdDialog.show({
     clickOutsideToClose: true,
     scope: $scope,        
     preserveScope: true,           
-    templateUrl: '/SiteAssets/team_portal_dev/app/templates/enomStatus.tmpl.html',
+    templateUrl: url,
     parent: angular.element(document.body),
     fullscreen: $scope.customFullscreen,
     locals: {dataToPass: x},
@@ -52,11 +53,12 @@ function dialogController ($scope, $mdDialog) {
   };
   
   $scope.showCandidateStatus = function(event, x) {
+  	var url = getSPProjectAssets() + "/app/templates/candidateStatus.tmpl.html";
    $mdDialog.show({
     clickOutsideToClose: true,
     scope: $scope,        
     preserveScope: true,           
-    templateUrl: '/SiteAssets/team_portal_dev/app/templates/candidateStatus.tmpl.html',
+    templateUrl: url,
     parent: angular.element(document.body),
     fullscreen: $scope.customFullscreen,
     locals: {dataToPass: x},
@@ -80,11 +82,13 @@ function dTableController ($scope, DTOptionsBuilder) {
 }
 sampleApp.config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/positions');
-	
+	var positions = getSPProjectAssets() + "/app/components/positions/positionsView.html";
+	var candidates = getSPProjectAssets() + "/app/components/candidates/candidatesView.html";
+	var enoms = getSPProjectAssets() + "/app/components/enoms/enomsView.html";
 	$stateProvider.
 		state('positions', {
 	  	url: '/positions',
-		  templateUrl: '/siteassets/team_portal_dev/app/components/positions/positionsView.html',
+		  templateUrl: positions,
 		  controller: 'positionsController',
 		  resolve: {
 		  	positions: function(positionsLibrary) {
@@ -94,7 +98,7 @@ sampleApp.config(function($stateProvider, $urlRouterProvider) {
 	  }).
 	  state('candidates', {
 	  	url: '/candidates',
-		  templateUrl: '/siteassets/team_portal_dev/app/components/candidates/candidatesView.html',
+		  templateUrl: candidates,
 		  controller: 'candidatesController',
 		  resolve: {
 		  	candidates: function(candidatesLibrary) {
@@ -104,7 +108,7 @@ sampleApp.config(function($stateProvider, $urlRouterProvider) {
 	  }).
 	  state('enoms', {
 	  	url: '/enoms',
-		  templateUrl: '/siteassets/team_portal_dev/app/components/enoms/enomsView.html',
+		  templateUrl: enoms,
 		  controller: 'enomController',
 		  resolve: {
 		  	enoms: function(enomsLibrary) {
@@ -114,7 +118,7 @@ sampleApp.config(function($stateProvider, $urlRouterProvider) {
 	  }).
 	  state('taskorders', {
 	  	url: '/taskOrders',
-		  templateUrl: '/siteassets/team_portal_dev/app/components/taskOrders/taskOrdersView.html',
+		  templateUrl: '/siteassets/team_portal/app/components/taskOrders/taskOrdersView.html',
 		  controller: 'taskOrdersController',
 		  resolve: {
 		  	taskOrders: function(taskOrdersLibrary) {

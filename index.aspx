@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
 <meta name="WebPartPageExpansion" content="full" />
-<title>App Demo in Angular</title>
+<title>Team Demo</title>
     <!--Import materialize.css-->
 		<link href="/SiteAssets/team_portal/assets/css/material-icons.css" rel="stylesheet">
     <link href="/SiteAssets/team_portal/assets/css/materialize.min.css" rel="stylesheet">
@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="/SiteAssets/team_portal/assets/css/angular-datatables.css">
     <link rel="stylesheet" href="/SiteAssets/team_portal/assets/css/angular-material.min.css">
   	<link rel="stylesheet" href="/SiteAssets/team_portal/assets/css/progress-wizard.min.css">
+  	<link rel="stylesheet" href="/SiteAssets/team_portal/assets/css/progress-tracker.css">
   	<link rel="stylesheet" href="/SiteAssets/team_portal/assets/fonts/font-awesome/css/font-awesome.min.css">
+  </head>
 
   <body ng-app="sampleApp" ng-cloak>
   	<div class="loading-wrapper" style="display: none;">
@@ -84,6 +86,7 @@
     <!-- Angular routes services -->
 		<script src="/SiteAssets/team_portal/app/app.module.js"></script>
     <script src="/SiteAssets/team_portal/app/app.routes.js"></script>
+    <script src="/SiteAssets/team_portal/app/components/positions/positionsService.js"></script>
     <script src="/SiteAssets/team_portal/app/components/candidates/candidatesService.js"></script>
     <script src="/SiteAssets/team_portal/app/components/enoms/enomsService.js"></script>
     <script src="/SiteAssets/team_portal/app/components/taskOrders/taskOrdersService.js"></script>

@@ -38,6 +38,25 @@ function getSPSitePath() {
 	return (url+path);
 }
 
+// Return path to the project's assets, based on the current page's extension
+function getSPProjectAssets() {
+	var root =  window.location.origin;
+	var pathname = window.location.pathname;
+	var projectname = pathname.substring(pathname.lastIndexOf('/')-1);
+	var filename = pathname.substring(pathname.lastIndexOf('/')+1);
+	var file_arr = filename.split(".aspx");
+	var mode = file_arr[0].split("_");
+	var url = "";
+	
+	if (mode.length > 1) {
+		// Not production mode
+		url = root + "/siteassets/team_portal_" + mode;
+	} else {
+		// Production mode
+		url = root + "/siteassets/team_portal";
+	}
+	return url;
+}
 // Return path to attachment
 function getSPAttachment(attachment) {
 	var url = "";
