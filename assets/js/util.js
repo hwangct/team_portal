@@ -39,6 +39,7 @@ function getSPSitePath() {
 }
 
 // Return path to the project's assets, based on the current page's extension
+// Only works if the index page is index_<mode>.aspx
 function getSPProjectAssets() {
 	var root =  window.location.origin;
 	var pathname = window.location.pathname;
@@ -50,7 +51,7 @@ function getSPProjectAssets() {
 	
 	if (mode.length > 1) {
 		// Not production mode
-		url = root + "/siteassets/team_portal_" + mode;
+		url = root + "/siteassets/team_portal_" + mode[1];
 	} else {
 		// Production mode
 		url = root + "/siteassets/team_portal";
@@ -84,4 +85,30 @@ function getString(obj) {
 	} else {
 		return obj;
 	}
+}
+
+// Checks if the status is Submission Status
+function isSubmissionStatus(status) {
+	var submission_arr = ['Submitted', 'Selected', 'Security Validated', 'Submitted to Customer PMO', 'Customer PMO Approved'];
+	if (status){
+		for (var x in submission_arr) {
+			if(status.toLowerCase() === submission_arr[x].toLowerCase()) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+// Checks if the status is Enom Status
+function isEnomStatus(status) {
+	var submission_arr = ['Submitted to customer PMO Security', 'Adjudicated', 'Scheduled', 'Indoc Date'];
+	if (status){
+		for (var x in submission_arr) {
+			if(status.toLowerCase() === submission_arr[x].toLowerCase()) {
+				return true;
+			}
+		}
+	}
+	return false;
 }

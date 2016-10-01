@@ -109,10 +109,10 @@ sampleApp.config(function($stateProvider, $urlRouterProvider) {
 	  state('enoms', {
 	  	url: '/enoms',
 		  templateUrl: enoms,
-		  controller: 'enomController',
+		  controller: 'candidatesController',
 		  resolve: {
-		  	enoms: function(enomsLibrary) {
-		  		return enomsLibrary.getEnoms();
+		  	candidates: function(candidatesLibrary) {
+		  		return candidatesLibrary.getCandidates();
 		  	}
 		  }
 	  }).

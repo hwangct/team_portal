@@ -4,13 +4,15 @@ ctrl.controller('positionsController', ['$scope', 'positions', function($scope, 
 	$scope.positions = positions;
 }]);
 ctrl.controller('candidatesController', ['$scope', 'candidates', function($scope, candidates) {
-	$scope.submissions = candidates.sub_arr;
+	$scope.submissions = candidates.substatus_arr;
+	$scope.enoms = candidates.enomstatus_arr;
 	//$scope.positions = candidates.open_pos_arr;
 	$scope.newsubmissionurl = newSubmissionUrl("Submissions/CandidateSubmission2.aspx");
 }]);
-ctrl.controller('enomController', ['$scope', 'enoms', function($scope, enoms) {
-	$scope.enoms = enoms;
-}]);
+/*
+ctrl.controller('candidatesController', ['$scope', 'candidates', function($scope, candidates) {
+	$scope.enoms = candidates.enomstatus_arr;
+}]);*/
 ctrl.controller('taskOrdersController', ['$scope', 'taskOrders', function($scope, taskOrders) {
 	$scope.taskOrders = taskOrders;
 }]);
