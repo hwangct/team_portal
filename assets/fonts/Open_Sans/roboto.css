@@ -1,0 +1,81 @@
+/* BEGIN Light */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("Roboto-Light.eot?v=1.1.0");
+  src: url("Roboto-Light.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("Roboto-Light.woff2?v=1.1.0") format("woff2"), url("Roboto-Light.woff?v=1.1.0") format("woff"), url("Roboto-Light.ttf?v=1.1.0") format("truetype"), url("Roboto-Light.svg?v=1.1.0#Light") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+/* END Light */
+/* BEGIN Light Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("Roboto-LightItalic.eot?v=1.1.0");
+  src: url("Roboto-LightItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("Roboto-LightItalic.woff2?v=1.1.0") format("woff2"), url("Roboto-LightItalic.woff?v=1.1.0") format("woff"), url("Roboto-LightItalic.ttf?v=1.1.0") format("truetype"), url("Roboto-LightItalic.svg?v=1.1.0#LightItalic") format("svg");
+  font-weight: 300;
+  font-style: italic; }
+/* END Light Italic */
+/* BEGIN Regular */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("Roboto-Regular.eot?v=1.1.0");
+  src: url("Roboto-Regular.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("Roboto-Regular.woff2?v=1.1.0") format("woff2"), url("Roboto-Regular.woff?v=1.1.0") format("woff"), url("Roboto-Regular.ttf?v=1.1.0") format("truetype"), url("Roboto-Regular.svg?v=1.1.0#Regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* END Regular */
+/* BEGIN Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("Roboto-Italic.eot?v=1.1.0");
+  src: url("Roboto-Italic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("Roboto-Italic.woff2?v=1.1.0") format("woff2"), url("Roboto-Italic.woff?v=1.1.0") format("woff"), url("Roboto-Italic.ttf?v=1.1.0") format("truetype"), url("Roboto-Italic.svg?v=1.1.0#Italic") format("svg");
+  font-weight: normal;
+  font-style: italic; }
+/* END Italic */
+/* BEGIN Semibold */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("Semibold/Roboto-Semibold.eot?v=1.1.0");
+  src: url("Semibold/Roboto-Semibold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("Semibold/Roboto-Semibold.woff2?v=1.1.0") format("woff2"), url("Semibold/Roboto-Semibold.woff?v=1.1.0") format("woff"), url("Semibold/Roboto-Semibold.ttf?v=1.1.0") format("truetype"), url("Semibold/Roboto-Semibold.svg?v=1.1.0#Semibold") format("svg");
+  font-weight: 600;
+  font-style: normal; }
+/* END Semibold */
+/* BEGIN Semibold Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("SemiboldRoboto-SemiboldItalic.eot?v=1.1.0");
+  src: url("SemiboldRoboto-SemiboldItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("SemiboldRoboto-SemiboldItalic.woff2?v=1.1.0") format("woff2"), url("SemiboldRoboto-SemiboldItalic.woff?v=1.1.0") format("woff"), url("SemiboldRoboto-SemiboldItalic.ttf?v=1.1.0") format("truetype"), url("SemiboldRoboto-SemiboldItalic.svg?v=1.1.0#SemiboldItalic") format("svg");
+  font-weight: 600;
+  font-style: italic; }
+/* END Semibold Italic */
+/* BEGIN Bold */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("Bold/Roboto-Bold.eot?v=1.1.0");
+  src: url("Bold/Roboto-Bold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("Bold/Roboto-Bold.woff2?v=1.1.0") format("woff2"), url("Bold/Roboto-Bold.woff?v=1.1.0") format("woff"), url("Bold/Roboto-Bold.ttf?v=1.1.0") format("truetype"), url("Bold/Roboto-Bold.svg?v=1.1.0#Bold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+/* END Bold */
+/* BEGIN Bold Italic */
+  font-family: 'Open Sans';
+  src: url("BoldRoboto-BoldItalic.eot?v=1.1.0");
+  src: url("BoldRoboto-BoldItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("BoldRoboto-BoldItalic.woff2?v=1.1.0") format("woff2"), url("BoldRoboto-BoldItalic.woff?v=1.1.0") format("woff"), url("BoldRoboto-BoldItalic.ttf?v=1.1.0") format("truetype"), url("BoldRoboto-BoldItalic.svg?v=1.1.0#BoldItalic") format("svg");
+  font-weight: bold;
+  font-style: italic; }
+/* END Bold Italic */
+/* BEGIN Extrabold */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("Roboto-ExtraBold.eot?v=1.1.0");
+  src: url("Roboto-ExtraBold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("Roboto-ExtraBold.woff2?v=1.1.0") format("woff2"), url("Roboto-ExtraBold.woff?v=1.1.0") format("woff"), url("Roboto-ExtraBold.ttf?v=1.1.0") format("truetype"), url("Roboto-ExtraBold.svg?v=1.1.0#ExtraBold") format("svg");
+  font-weight: 800;
+  font-style: normal; }
+/* END Extrabold */
+/* BEGIN Extrabold Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("ExtraBoldRoboto-ExtraBoldItalic.eot?v=1.1.0");
+  src: url("ExtraBoldRoboto-ExtraBoldItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("ExtraBoldRoboto-ExtraBoldItalic.woff2?v=1.1.0") format("woff2"), url("ExtraBoldRoboto-ExtraBoldItalic.woff?v=1.1.0") format("woff"), url("ExtraBoldRoboto-ExtraBoldItalic.ttf?v=1.1.0") format("truetype"), url("ExtraBoldRoboto-ExtraBoldItalic.svg?v=1.1.0#ExtraBoldItalic") format("svg");
+  font-weight: 800;
+  font-style: italic; }
+/* END Extrabold Italic */
+
+/*# sourceMappingURL=open-sans.css.map */

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
 <meta name="WebPartPageExpansion" content="full" />
-<title>Team Demo (Testing)</title>
+<title>Team Portal (Testing)</title>
     <!--Import materialize.css-->
 		<link href="/SiteAssets/team_portal_dev/assets/css/material-icons.css" rel="stylesheet">
     <link href="/SiteAssets/team_portal_dev/assets/css/materialize.min.css" rel="stylesheet">
