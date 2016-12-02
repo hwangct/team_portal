@@ -1,0 +1,46 @@
+{
+  "clean": {
+    "src" : "../cdn/build/**/*"
+  },
+  "glide": {
+  	"src"	: "../cdn/app/php/*.php",
+    "replace_src" : ["../cdn/build/app/php/*.tmp.txt", "../cdn/app/php/*.tmp.txt"],
+  	"convert_src" : "../cdn/build/app/php/*.php",
+  	"convert_dest" : "../cdn/app/php",
+  	"dest" : "../cdn/build/app/php",
+  	"package_src" : ["../cdn/app/**/*", "../cdn/index.html"]
+  },
+  "css": {
+    "src" : ["../cdn/app/css/cdn-admin.css", "../cdn/app/css/*.css"],
+    "dest": "../cdn/build/app/css/"
+  },
+  "js": {
+    "hintsrc" : "../cdn/app/**/*.js",
+    "uglifysrc" : ["../cdn/app/js/**", "!../cdn/app/js/angular-material-icons.min.js"],
+    "concatsrc" : "../cdn/build/app/js/*.js",
+    "concat_cleanup" : ["../cdn/build/app/js/**/*", "!../cdn/build/app/js/scripts.min.js"],
+    "dest": "../cdn/build/app/js/"
+  },
+  "copy": {
+  	"base" : "../cdn",
+    "src" : ["../cdn/app/**/*"],
+    "src_dev" : "../cdn/app/**/*",
+    "dest" : "../cdn/build"
+  },
+  "replace": {
+    "src": "../cdn/index.html",
+    "dest": "../cdn/build/"
+  },
+  "ssh": {
+    "host": "",
+    "user": "",
+    "password": "",
+    "src": "../cdn/build/**/*",
+    "dest": "",
+    "dest_staging": "",
+    "dest_dev": ""
+  },
+  "sync": {
+    "basedir": "../ecobar2.0"
+  }
+}

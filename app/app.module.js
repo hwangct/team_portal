@@ -7,7 +7,7 @@ ctrl.controller('candidatesController', ['$scope', 'candidates', function($scope
 	$scope.submissions = candidates.substatus_arr;
 	$scope.enoms = candidates.enomstatus_arr;
 	//$scope.positions = candidates.open_pos_arr;
-	$scope.newsubmissionurl = newSubmissionUrl("Submissions/CandidateSubmission2.aspx");
+	$scope.newsubmissionurl = newSubmissionUrl("Submissions/NewSubmission.aspx");
 }]);
 /*
 ctrl.controller('candidatesController', ['$scope', 'candidates', function($scope, candidates) {
